@@ -10,7 +10,6 @@ import plotly.express as px
 import matplotlib.pyplot as plt
 import webbrowser
 from io import BytesIO
-import polars as pl
 import requests
 from supabase import create_client
 
@@ -223,4 +222,5 @@ def to_excel(df):
     return buf.getvalue()
 
 st.download_button("📥 Download Excel", to_excel(df_display), file_name="nps_filtered.xlsx")
+
 
