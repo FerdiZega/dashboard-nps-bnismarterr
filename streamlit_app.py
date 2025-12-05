@@ -21,8 +21,8 @@ def load_big_data(file):
     return df
 
 # Supabase Auth
-url="SUPABASE_URL"
-key="SUPABASE_KEY"
+url="https://misvoheyqxrlnebprxuf.supabase.co"
+key="sb_publishable_6vPKansxgOEs-vkFSpyAmA_aqmHNFk1"
 supabase=create_client(url,key)
 
 st.set_page_config(page_title="Dashboard NPS Mentor - BNI", layout="wide")
@@ -222,5 +222,6 @@ def to_excel(df):
     return buf.getvalue()
 
 st.download_button("📥 Download Excel", to_excel(df_display), file_name="nps_filtered.xlsx")
+
 
 
