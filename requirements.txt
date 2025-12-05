@@ -3,7 +3,8 @@ pandas
 numpy
 plotly
 openpyxl
-tqdm
-matplotlib
 sqlalchemy
 psycopg2-binary
+supabase
+python-dotenv
+polars
