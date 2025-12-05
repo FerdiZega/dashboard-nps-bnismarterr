@@ -22,27 +22,6 @@ SUPABASE_KEY = "sb_publishable_6vPKansxgOEs-vkFSpyAmA_aqmHNFk1"
 
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
-# ======================================================
-# LOGIN
-# ======================================================
-st.title("🔐 Login Dashboard NPS BNI")
-
-if "session" not in st.session_state:
-    email = st.text_input("Email")
-    password = st.text_input("Password", type="password")
-
-    if st.button("Login"):
-        try:
-            st.session_state.session = supabase.auth.sign_in_with_password(
-                {"email": email, "password": password}
-            )
-            st.success("Login berhasil ✔")
-        except Exception as e:
-            st.error("Login gagal, cek email/password.")
-    st.stop()
-
-st.success("Login berhasil ✔")
-st.markdown("---")
 
 # ======================================================
 # UPLOAD DATA → Insert ke Supabase
@@ -129,3 +108,4 @@ st.download_button(
     to_excel(df_filtered),
     "nps_filtered.xlsx"
 )
+
